@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+<meta charset="UTF-8">
+<title>Wiki Article Validator</title>
+<link rel="stylesheet" href="./wiki-validator.css">
 </head>
+<link rel="icon" type="image/x-icon" href="/favicon.png">
 <body>
-    <div class = "left">
-        <input type="text" id="categoryInput" placeholder="eg. CVV">
-        <button type="button" onclick="loadcategory()">Sumbit</button>
+
+<div class="main">
+
+    <div class="left">
+        <h3>Search & Category</h3>
+        <input id="categoryInput" type="text" placeholder="Search Article / Category">
+        <button type="button" onclick="loadCategory()">Submit</button>
+
+        <h4>Category Articles</h4>
         <ul id="articleList"></ul>
     </div>
-    <div class = "middle">
-        
-        <iframe id="wikiFrame"></iframe>
+
+    <div class="middle">
+        <h3>Article Viewer</h3>
+        <iframe id="articleViewer" class="article-box"></iframe>
     </div>
-    <div class = "right">
+
+    <div class="right">
+        <h3>Validation Criteria</h3>
+
+        <textarea id="criteriaInput" placeholder="Enter criteria"></textarea>   
+
+        <div class="btn-group">
+            <button onclick="markYes()">YES</button>
+            <button onclick="markNo()">NO</button>
+        </div>
+
+        <h4>Yes Articles</h4>
         <ul id="yesList"></ul>
+
+        <h4>No Articles</h4>
         <ul id="noList"></ul>
+
+        <button class="copy-btn" onclick="copy()">Copy Yes & No List</button>
     </div>
-    <script src="script.js"></script>
+
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>   
+</html>
